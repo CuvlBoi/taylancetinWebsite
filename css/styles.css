@@ -4,3 +4,22 @@
 
 @media screen{
 }
+
+body {
+    font-family: Satisfy;
+}
+
+.websiteLogo {
+
+  font-family : Roboto Slab;
+  font-style: light;
+  font-variant : small-caps;
+
+
+}
+
+.nav-link {
+
+    font-family: 'Roboto Slab' ;
+    font-style: medium;
+}
