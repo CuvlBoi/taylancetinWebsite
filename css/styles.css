@@ -5,13 +5,15 @@
 @media screen{
 }
 
+
+
 body {
-    font-family: Satisfy;
+    font-family: 'Roboto Slab';
 }
 
 .websiteLogo {
 
-  font-family : Roboto Slab;
+  font-family : 'Roboto Slab';
   font-style: light;
   font-variant : small-caps;
 
@@ -23,3 +25,4 @@ body {
     font-family: 'Roboto Slab' ;
     font-style: medium;
 }
+
