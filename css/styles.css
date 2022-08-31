@@ -9,6 +9,8 @@
 
 body {
     font-family: 'Roboto Slab';
+    text-size-adjust: auto;
+
 }
 
 .websiteLogo {
@@ -17,6 +19,7 @@ body {
   font-style: light;
   font-variant : small-caps;
 
+  text-size-adjust: auto;
 
 }
 
@@ -25,4 +28,3 @@ body {
     font-family: 'Roboto Slab' ;
     font-style: medium;
 }
-
