@@ -1,0 +1,41 @@
+{{ partial "header.html" . -}}
+
+<body>
+<main>
+<div class="mx-3 mx-sm-5 my-4">
+<h1 class=" ">{{ .Title }}</h1>
+
+{{- if isset .Params "tags" -}}
+{{- $tagsLen := len .Params.tags -}}
+{{- if gt $tagsLen 0 -}}
+
+{{- with .Site.Params.relatedtext }}{{ . }}<br>{{ end -}}
+    {{- range $k, $v := .Params.tags -}}
+    {{- $url := printf "tags/%s" (. | urlize | lower) -}}
+    <a id="tag_{{ . | lower }}" href="{{ $url | absURL }}" class="btn btn-sm btn-dark lead ">#{{ . | title }}</a>
+    {{- if lt $k (sub $tagsLen 1) }} <a class="mx-3"><img src="/images/circle-fill.svg" alt="" width="18" px class="img-fluid"></a>{{ end -}}
+    {{- end -}}
+{{- end -}}
+{{- end }}
+
+{{ if in .Params.tags "inceleme" }}
+{{ with .Params.artist }}
+         
+    <p class="my-3"><a href="/artist/{{.}}" class="btn btn-sm btn-outline-dark ">Sanatçı: {{.}} </a></p>
+
+{{end}}
+{{end }}
+</div>
+<div class="container ">
+<article class=" mx-5 my-3 h5 ">
+{{ .Content -}}
+
+</article>
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
+</body>
+
+
+{{ partial "footer.html" . }}

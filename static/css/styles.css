@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@media screen{
+}
+
+
+
+body {
+    font-family: 'Roboto ';
+    text-size-adjust: auto;
+
+}
+
+.websiteLogo {
+
+  font-family : 'Roboto Slab';
+  font-style: light;
+  font-variant : small-caps;
+
+  text-size-adjust: auto;
+
+}
+
+.nav-link {
+
+    font-family: 'Roboto Slab' ;
+    font-style: medium;
+}
+
+
+
+.articleHeader{
+  
+  font-family : 'Roboto Slab';
+  font-style: light;
+ 
+
+  text-size-adjust: auto;
+
+
+}

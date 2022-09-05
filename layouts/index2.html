@@ -1,0 +1,168 @@
+{{ partial "header.html" . -}}
+
+
+<body>
+    <div class="text-center">
+        <p class="h1">Müzik Blog Sayfasına Hoşgeldin</p>
+        <p class="h5"> Burada 3 farklı başlıkta bütün müzik içeriklerime ulaşabilirsin, bunlar;</p>
+    </div>
+
+    <div class="album py-5 border-bottom">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-around">
+                <div class="col">
+                    <div class="card shadow rounded-4">
+                        <img src="/images/albumKapagiAmorf.png" alt="Amorf Albüm Logo Fotoğraf"
+                            class=" img-fluid rounded-4" height="250">
+
+                        <div class="card-body">
+                            <h2>Amorf</h2>
+                            <p class="card-text h5">
+                                6 kişilik efsane grup, öğrenci müzik grubu Amorf. Bass gitar, bateri, üç elektro gitar
+                                ve vocal'den oluşan grubumuz başta okulda düzenlenen Moral konseri olmak üzere çeşitli
+                                noktalarda sahne alıyor. Amorf'un benim açımdan ilerleyişini içeriyor.
+                            </p>
+
+                            <a href="/tags/amorf/" class="btn btn-sm btn-outline-secondary">İncele</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card shadow rounded-4">
+                        <img src="/images/manListeningMusic.png" alt="Amorf Albüm Logo Fotoğraf"
+                            class=" img-fluid rounded-4" height="250">
+
+                        <div class="card-body">
+                            <h2>İnceleme</h2>
+                            <p class="card-text h5">
+                                İyi müzik yapabilmek için çok müzik dinlemek gerekir. Birçok sanatçının müziğinden
+                                parçalar sizin müziğinizi oluşturur. Dinlediğim sanatçıları, albümleri ve şarkıları
+                                gruplamak beni rahatlatıyor. Çünkü beğendiğim şarkıları asla kaybetmeyeceğimi biliyorum.
+                                Bir sonraki adımım ise bu grupladığım sanatçılar, albümler ve şarkılar hakkında yazı
+                                yazmak olacak.
+                                <br> Bu yazıları burada topluyorum.
+                            </p>
+
+                            <a href="/tags/inceleme/" class="btn btn-sm btn-outline-secondary">İncele</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow rounded-4 ">
+                        <img src="/images/basCalanAdam.png" alt="Kişisel Müzik" class=" img-fluid rounded-4 "
+                            height="250">
+
+                        <div class="card-body">
+                            <h2>Kişisel</h2>
+                            <p class="card-text h5">
+                                Elime gitarımı alıp kaydettiğim parçalar
+                            </p>
+                            <p class="card-text h5"> <br> 2018'de klasik gitarla başladım bu maceraya. Zamanla yeni
+                                enstrümanlar denemek istedim. Kendi biriktirdiğim paramla Bas gitar aldım. Bir vakit
+                                sonra fark ettim ki, odamı küçük bir stüdyoya çeviriyorum. İşte bu stüdyo sayesinde
+                                gitarımı elime her aldığımda ve telleri her tıngırdattığımda benden müziğe eklediğim
+                                parçamı kaydedebiliyorum.
+                                <br> <br> İlerleyişini görebilmek ve toplu tutabilmek için burada topluyorum.
+                            </p>
+                            <a href="/tags/bireysel/" class="btn btn-sm btn-outline-secondary">İncele</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    {{ range .RegularPages | first 1 }}
+    <div class="mx-3 border-bottom">
+        <div class="rounded-4 text-bg-light mx-auto my-4 container row border border-3 border-dark shadow-lg ">
+            <div class=" col mx-3 my-3  order-sm-last ">
+                {{ if .Params.coverPhoto }}
+                <img src=" {{ .Params.coverPhoto }} " alt="Yazı Cover Foto"
+                    class="rounded-4 img-fluid border border-white border-3">
+
+                {{ end}}
+            </div>
+
+            <div class="col-md-6 mx-3 my-3 order-sm-first">
+                <p class="text-muted h4">Önerilen Yazı</p>
+                <h1 class="display-4 fst-italic">{{ .Page.Title }}</h1>
+                <h4>Yayınlanma Tarihi: {{ .Date.Format "02/01/2006" }} </h4>
+                <p class="lead my-3"> {{ .Summary }} </p>
+                {{ if .Truncated}}
+                <p class="lead mb-0"><a href="{{ .RelPermalink }} " class=" fw-bold btn btn-outline-secondary">Devam
+                        et</a></p>
+                {{end}}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+
+    <h2 class="mx-auto my-2 text-center">Son Çıkan Yazılar</h2>
+
+    <div class=" my-5 px-3 mx-4 row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-around border-bottom">
+        {{range .RegularPages | first 2 | last 1}}
+        <div class="col">
+            <div class=" rounded-3 text-bg-secondary mx-3 my-3 px-4 py-3 border border-3 border-dark ">
+                <h1 class="display-4 fst-italic"> {{ .Page.Title }} </h1>
+                <h4>Yayınlanma Tarihi: {{ .Date.Format "02/01/2006" }} </h3>
+                    <p class="lead my-3"> {{ .Summary }} </p>
+                    {{ if .Truncated}}
+                    <a href="{{ .RelPermalink }} " class="btn btn-outline-dark">Devam et</a>
+                    {{end}}
+            </div>
+        </div>
+        {{ end }}
+
+        {{range .RegularPages | first 3 | last 1}}
+        <div class="col ">
+            <div class=" rounded-3 text-bg-secondary mx-3 my-3 px-4 py-3 border border-3 border-dark  ">
+                <h1 class="display-4 fst-italic"> {{ .Page.Title }} </h1>
+                <h4>Yayınlanma Tarihi: {{ .Date.Format "02/01/2006" }} </h3>
+                    <p class="lead my-3"> {{ .Summary }} </p>
+                    {{ if .Truncated}}
+                    <a href="{{ .RelPermalink }} " class="btn btn-outline-dark">Devam et</a>
+                    {{end}}
+            </div>
+        </div>
+        {{ end }}
+
+        {{range .RegularPages | first 4 | last 1}}
+        <div class="col">
+            <div class=" rounded-3 text-bg-secondary mx-3 my-3 px-4 py-3 border border-3 border-dark ">
+                <h1 class="display-4 fst-italic"> {{ .Page.Title }} </h1>
+                <h4>Yayınlanma Tarihi: {{ .Date.Format "02/01/2006" }} </h3>
+                    <p class="lead my-3"> {{ .Summary }} </p>
+                    {{ if .Truncated}}
+                    <a href="{{ .RelPermalink }} " class="btn btn-outline-dark">Devam et</a>
+                    {{end}}
+            </div>
+        </div>
+        {{ end }}
+
+    </div>
+   
+    <div style="margin-top: -2.5rem !important ; margin-bottom: -1.5rem !important;">
+        {{ partial "archive.html"}}
+
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+
+</body>
+{{- partial "footer.html" . }}

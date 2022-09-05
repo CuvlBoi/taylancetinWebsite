@@ -1,0 +1,80 @@
+
+
+<footer>
+    {{ if .IsSection }}
+    {{ else }}
+	{{ if or .NextInSection .PrevInSection -}}
+	<div class="row justify-content-between mx-5 py-3 border-top">
+		{{- with .PrevInSection }}
+		<a href="{{ .RelPermalink}}" class="btn btn-dark btn-md col-sm-3 my-2">Önceki</a>
+		{{ else }}
+		<a href="" class="btn btn-dark btn-md col-sm-3 my-2">Daha geri gidemezsin</a>
+
+		{{ end -}}
+		<a href="/" class="btn btn-dark btn-md col-sm-3 my-2">Müzik Anasayfa</a>
+
+		{{- with .NextInSection -}}
+		<a href="{{ .RelPermalink}}" class="btn btn-dark btn-md col-sm-3 my-2">Sonraki</a>
+		{{ else }}
+		<a href="" class="btn btn-dark btn-md col-sm-3 my-2">Daha ileri gidemezsin</a>
+
+		{{ end -}}
+	</div>
+	{{ end -}}
+    {{end}}
+	
+	<div class="container">
+        <div class="py-3 my-2">
+            <ul class="nav justify-content-center border-top border-bottom pb-3 mb-3">
+                <li class="nav-item my-auto">
+                    <a href="/" class="nav-link px-2 text-muted">Anasayfa</a>
+                </li>
+                <li class="nav-item my-auto">
+                    <a href="/about-me" class="nav-link px-2 text-muted">Hakkımda</a>
+                </li>
+                <li class="nav-item my-auto">
+                    <a href="/music" class="nav-link px-2 text-muted">Müzik</a>
+                </li>
+                <li class="nav-item my-auto">
+                    <a href="/my-work" class="nav-link px-2 text-muted">Benim İşim</a>
+                </li>
+                <li class="nav-item my-auto">
+                    <a href="/media" class="nav-link px-2 text-muted">Medya & Blog</a>
+                </li>
+                <li class="nav-item my-auto">
+                    <a href="/contact-me" class="nav-link px-2 text-muted">Bana Ulaş</a>
+                </li>
+            </ul>
+            <ul class="nav justify-content-center pb-3 mb-3 ">
+                <li class="nav-item px-2 my-auto">
+                    <a href="https://github.com/CuvlBoi"><img src="/images/github.svg" alt="GitHub" width="36" px
+                            class="img-fluid"></a>
+                </li>
+                <li class="nav-item px-2 my-auto">
+                    <a><img src="/images/circle-fill.svg" alt="" width="18" px class="img-fluid"></a>
+                </li>
+                <li class="nav-item px-2 my-auto">
+                    <a href="https://open.spotify.com/user/212xq2o3lkzaobosioqsl5ely?si=5975568e8c33457b"><img
+                            src="/images/spotify.svg" alt="Spotify" width="36" px class="img-fluid"></a>
+                </li>
+                <li class="nav-item px-2 my-auto">
+                    <a><img src="/images/circle-fill.svg" alt="" width="18" px class="img-fluid"></a>
+                </li>
+                <li class="nav-item px-2 my-auto">
+                    <a href="https://www.instagram.com/cuvlboi/"><img src="/images/instagram.svg" alt="Instagram"
+                            width="36" px class="img-fluid"></a>
+                </li>
+                <li class="nav-item px-2 my-auto">
+                    <a><img src="/images/circle-fill.svg" alt="" width="18" px class="img-fluid"></a>
+                </li>
+                <li class="nav-item px-2 my-auto">
+                    <a href="https://www.linkedin.com/in/taylan-%C3%A7etin-454401222/"><img src="/images/linkedin.svg"
+                            alt="" width="36" px class="img-fluid"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</footer>
+
+</html>

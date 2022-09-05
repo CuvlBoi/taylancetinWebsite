@@ -1,0 +1,68 @@
+{{ partial "header.html" . -}}
+
+
+<body>
+    <div class="text-center">
+        <p class="h1">Burası Arşiv</p>
+        <p class="h5"> Burada yayınlanmış bütün yazıları bulucaksın</p>
+    </div>
+
+    <div class=" mx-4 ">
+
+        <div class="row row-cols-2 row-cols-md-5 row-cols-sm-3 justify-content-around ">
+
+            {{ range where .Site.RegularPages "Section" "eq" "music" }}
+            <div class="  mx-3 my-2 px-3 py-2  col text-bg-light border border-dark border-2 rounded-2">
+                <a href="{{.RelPermalink}}" class="text-decoration-none text-reset my-2">
+
+                    <h2 class="articleHeader text-dark "> {{ .Title }}</h2>
+                    <h5 class=" text-dark fw-lighter ">Yayınlanma Tarihi: {{ .Date.Format "02/01/2006" }} </h4>
+                </a>
+                {{if eq .Params.categories "music" }}
+                <a href="/categories/music" class=" text-dark fw-lighter btn btn-sm btn-outline-dark ">Kategori:
+                    Müzik</a>
+                {{end}}
+                {{if eq .Params.categories "media" }}
+                <a href="/categories/music" class=" text-dark fw-lighter btn btn-sm btn-outline-dark ">Kategori:
+                    Medya</a>
+                {{end}}
+                    
+                {{- if isset .Params "tags" -}}
+                {{- $tagsLen := len .Params.tags -}}
+                {{- if gt $tagsLen 0 -}}
+                <div class="my-3">
+                    {{- with .Site.Params.relatedtext }}{{ . }}<br>{{ end -}}
+                    {{- range $k, $v := .Params.tags -}}
+                    {{- $url := printf "tags/%s" (. | urlize | lower) -}}
+                    <a id="tag_{{ . | lower }}" href="{{ $url | absURL }}" class="btn btn-sm btn-outline-dark lead ">#{{
+                        . | title }}</a>
+                    {{- if lt $k (sub $tagsLen 1) }} {{ end -}}
+                    {{- end -}}
+                </div>
+                {{- end -}}
+                {{- end }}
+
+                
+            {{ if in .Params.tags "inceleme" }}
+            {{ with .Params.artist }}
+                     
+                <a href="/artist/{{.}}" class="btn btn-sm btn-outline-dark ">Sanatçı: {{.}} </a>
+
+            {{end}}
+            {{end }}
+
+            </div>
+            {{ end }}
+
+        </div>
+
+    </div>
+
+
+    {{ partial "archive.html"}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+
+</body>
+{{- partial "footer.html" . }}
