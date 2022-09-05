@@ -3,11 +3,17 @@
 
 <body>
     <div class="text-center">
-        <p class="h1">Burası Arşiv</p>
+        <p class="h1 articleHeader">Arşiv</p>
         <p class="h5"> Burada yayınlanmış bütün yazıları bulucaksın</p>
     </div>
+    <div class=" text-center text-reset h3 mx-5 my-5">
+        <a href="/categories/" class=" mx-2 my-2  btn btn-lg  btn-outline-dark ">Medya / Blog ve Müzik </a> 
+        <a href="/tags/" class="mx-2 my-2   btn btn-lg btn-outline-dark ">Ana Başlıklar </a> 
+        <a href="/artists/" class="mx-2 my-2   btn btn-lg  btn-outline-dark ">Sanatçılar </a> 
+    
+    </div>
 
-    <div class=" mx-4 ">
+    <div class=" mx-4 border-bottom my-3 pb-3 ">
 
         <div class="row row-cols-2 row-cols-md-5 row-cols-sm-3 justify-content-around ">
 
@@ -19,11 +25,11 @@
                     <h5 class=" text-dark fw-lighter ">Yayınlanma Tarihi: {{ .Date.Format "02/01/2006" }} </h4>
                 </a>
                 {{if eq .Params.categories "music" }}
-                <a href="/categories/music" class=" text-dark fw-lighter btn btn-sm btn-outline-dark ">Kategori:
+                <a href="/categories/music" class="  fw-lighter btn btn-sm btn-outline-dark ">Kategori:
                     Müzik</a>
                 {{end}}
                 {{if eq .Params.categories "media" }}
-                <a href="/categories/music" class=" text-dark fw-lighter btn btn-sm btn-outline-dark ">Kategori:
+                <a href="/categories/music" class=" fw-lighter btn btn-sm btn-outline-dark ">Kategori:
                     Medya</a>
                 {{end}}
                     
@@ -44,9 +50,9 @@
 
                 
             {{ if in .Params.tags "inceleme" }}
-            {{ with .Params.artist }}
+            {{ with .Params.artists }}
                      
-                <a href="/artist/{{.}}" class="btn btn-sm btn-outline-dark ">Sanatçı: {{.}} </a>
+                <a href="/artists/{{ . | lower | urlize }}" class="btn btn-sm btn-outline-dark ">Sanatçı: {{.}} </a>
 
             {{end}}
             {{end }}

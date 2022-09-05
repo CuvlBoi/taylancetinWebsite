@@ -3,7 +3,7 @@
 <body>
 <main>
 <div class="mx-3 mx-sm-5 my-4">
-<h1 class=" ">{{ .Title }}</h1>
+<h1 class="articleHeader " style="font-size:54px;">{{ .Title }}</h1>
 
 {{- if isset .Params "tags" -}}
 {{- $tagsLen := len .Params.tags -}}
@@ -12,16 +12,16 @@
 {{- with .Site.Params.relatedtext }}{{ . }}<br>{{ end -}}
     {{- range $k, $v := .Params.tags -}}
     {{- $url := printf "tags/%s" (. | urlize | lower) -}}
-    <a id="tag_{{ . | lower }}" href="{{ $url | absURL }}" class="btn btn-sm btn-dark lead ">#{{ . | title }}</a>
+    <a id="tag_{{ . | lower }}" href="{{ $url | absURL }}" class="btn btn-dark lead ">#{{ . | title }}</a>
     {{- if lt $k (sub $tagsLen 1) }} <a class="mx-3"><img src="/images/circle-fill.svg" alt="" width="18" px class="img-fluid"></a>{{ end -}}
     {{- end -}}
 {{- end -}}
 {{- end }}
 
 {{ if in .Params.tags "inceleme" }}
-{{ with .Params.artist }}
+{{ with .Params.artists }}
          
-    <p class="my-3"><a href="/artist/{{.}}" class="btn btn-sm btn-outline-dark ">Sanatçı: {{.}} </a></p>
+    <p class="my-3"><a href="/artists/{{ . | lower }}/" class="btn btn-outline-dark ">Sanatçı: {{.}} </a></p>
 
 {{end}}
 {{end }}

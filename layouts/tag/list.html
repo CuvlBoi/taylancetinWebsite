@@ -3,11 +3,11 @@
 
 <body>
     <div class="text-center">
-        <p class="h1">Müzik Blog Sayfasına Hoşgeldin</p>
-        <p class="h5"> Burada 3 farklı başlıkta bütün müzik içeriklerime ulaşabilirsin, bunlar;</p>
+        <p class="h1">Müzik bölümünün 3 ana başlığı var</p>
+        <p class="h5">Anasayfadan ya da buradan bu başlıklara ulaşabilirsin</p>
     </div>
 
-    <div class="album py-5 border-bottom">
+    <div class="album py-5 mb-3 border-bottom">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-around">
                 <div class="col">
@@ -81,85 +81,10 @@
         </div>
     </div>
 
-    {{ range .CurrentSection.RegularPages | first 1 }}
-    <div class="mx-3 border-bottom">
-        <div class="rounded-4 text-bg-light mx-auto my-4 container row border border-3 border-dark shadow-lg ">
-            <div class=" col mx-3 my-3  order-sm-last ">
-                {{ if .Params.coverPhoto }}
-                <img src=" {{ .Params.coverPhoto }} " alt="Yazı Cover Foto"
-                    class="rounded-4 img-fluid border border-white border-3">
-
-                {{ end}}
-            </div>
-
-            <div class="col-md-6 mx-3 my-3 order-sm-first">
-                <p class="text-muted h4">Önerilen Yazı</p>
-                <h1 class="display-4 fst-italic articleHeader" >{{ .Page.Title }}</h1>
-                <h4>Yayınlanma Tarihi: {{ .Date.Format "02/01/2006" }} </h4>
-                <p class="lead my-3"> {{ .Summary }} </p>
-                {{ if .Truncated}}
-                <p class="lead mb-0"><a href="{{ .RelPermalink }} " class=" fw-bold btn btn-outline-secondary">Devam
-                        et</a></p>
-                {{end}}
-            </div>
-        </div>
-    </div>
-    {{ end }}
-
-    <h2 class="mx-auto my-2 text-center">Son Çıkan Yazılar</h2>
-
-    <div class=" my-5 px-3 mx-4 row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-around border-bottom">
-        {{range .RegularPages | first 2 | last 1}}
-        <div class="col">
-            <div class=" rounded-3 text-bg-secondary mx-3 my-3 px-4 py-3 border border-3 border-dark ">
-                <h1 class="display-4 fst-italic articleHeader"> {{ .Page.Title }} </h1>
-                <h4>Yayınlanma Tarihi: {{ .Date.Format "02/01/2006" }} </h3>
-                    <p class="lead my-3"> {{ .Summary }} </p>
-                    {{ if .Truncated}}
-                    <a href="{{ .RelPermalink }} " class="btn btn-outline-dark">Devam et</a>
-                    {{end}}
-            </div>
-        </div>
-        {{ end }}
-
-        {{range .RegularPages | first 3 | last 1}}
-        <div class="col ">
-            <div class=" rounded-3 text-bg-secondary mx-3 my-3 px-4 py-3 border border-3 border-dark  ">
-                <h1 class="display-4 fst-italic articleHeader"> {{ .Page.Title }} </h1>
-                <h4>Yayınlanma Tarihi: {{ .Date.Format "02/01/2006" }} </h3>
-                    <p class="lead my-3"> {{ .Summary }} </p>
-                    {{ if .Truncated}}
-                    <a href="{{ .RelPermalink }} " class="btn btn-outline-dark">Devam et</a>
-                    {{end}}
-            </div>
-        </div>
-        {{ end }}
-
-        {{range .RegularPages | first 4 | last 1}}
-        <div class="col">
-            <div class=" rounded-3 text-bg-secondary mx-3 my-3 px-4 py-3 border border-3 border-dark ">
-                <h1 class="display-4 fst-italic articleHeader"> {{ .Page.Title }} </h1>
-                <h4>Yayınlanma Tarihi: {{ .Date.Format "02/01/2006" }} </h3>
-                    <p class="lead my-3"> {{ .Summary }} </p>
-                    {{ if .Truncated}}
-                    <a href="{{ .RelPermalink }} " class="btn btn-outline-dark">Devam et</a>
-                    {{end}}
-            </div>
-        </div>
-        {{ end }}
-
-    </div>
-   
-    <div style="margin-top: -2.5rem !important ; margin-bottom: -1.5rem !important;">
-        {{ partial "archive.html"}}
-
-    </div>
 
 
 
-
-
-
+    {{ partial "archive.html"}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
         crossorigin="anonymous"></script>

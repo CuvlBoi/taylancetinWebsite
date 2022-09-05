@@ -4,7 +4,7 @@ date: {{ .Date }}
 draft: true
 tags: [ 'amorf' , 'bireysel' , 'inceleme' ]
 categories: 'music' 'media'
-artist: []
+artists: ''
 
 coverPhoto: ""
 ---

@@ -1,0 +1,34 @@
+{{ partial "header.html" . -}}
+
+
+<body class=" ">
+    <div class="text-center">
+        <p class="h1">Burası Sanatçılar Listesi</p>
+        <p class="h5"> Burada yayınlandığım parçalarını ya da albümlerini incelediğim sanatçıları bulucaksın</p>
+    </div>
+
+    <div class=" mx-4 border-bottom my-3 pb-3">
+
+        <div class="row row-cols-2 row-cols-sm-3 justify-content-around ">
+
+        {{ range .Data.Terms.Alphabetical }}
+        <div class="  mx-3 my-2 px-3 py-2  col text-bg-light border border-dark border-2 rounded-2">
+
+            <h1><a href="{{ .Page.Permalink}}" class=" text-decoration-none text-reset articleHeadertext-capitalize">{{ .Page.Title}}</a></h1>
+            <h3><strong>{{.Count}} </strong>Yazı Paylaşıldı  </h3>
+        </div>
+        {{ end }}
+
+    </div>
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+
+</body>
+<div class="mt-2">{{ partial "archive.html"}}</div>
+
+{{- partial "footer.html" . }}

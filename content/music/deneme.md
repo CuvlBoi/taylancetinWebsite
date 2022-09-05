@@ -4,7 +4,7 @@ date: 2022-09-01T13:15:28+03:00
 draft: false
 tags: [ 'inceleme', 'amorf' ]
 categories: 'music'
-artist: 'Duman'
+artists: 'Duman'
 ---
 
 

@@ -1,13 +1,13 @@
 ---
-title: "Deneme5"
-date: 2022-09-02T13:55:05+03:00
-tags: [ "amorf" ]
+title: "Denme7"
+date: 2022-09-05T21:33:26+03:00
+
+tags: ['inceleme' ]
 categories: 'music'
-artist: 'Mor ve Ötesi'
+artists: 'Duman'
 
 coverPhoto: ""
 ---
-
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vestibulum velit felis, vitae tempor orci vestibulum in. Quisque sit amet elit euismod, imperdiet ipsum sit amet, egestas sem. Quisque et sapien nunc. Curabitur vel placerat nunc, ut feugiat ligula. Sed porttitor leo eget mi dapibus, vel pellentesque orci pellentesque. Aenean faucibus dui ac arcu accumsan elementum. Donec vulputate, lectus eu auctor viverra, augue nisl tempor felis, nec condimentum nisi leo vel elit. Sed in ornare ex, eget laoreet urna. Phasellus euismod vitae purus ac dapibus. Aenean sed arcu sit amet ex viverra sagittis at sed lacus. Praesent maximus tortor id nunc tincidunt consequat. Phasellus ut viverra ante. Cras mi urna, bibendum id massa id, blandit eleifend dolor.
